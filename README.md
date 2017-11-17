@@ -1,5 +1,5 @@
 # Docker image: Logstash 5/6 on CentOS 7
-Running Logstash 5 or 6 on CentOS 7/Oracle Java 9
+Running Logstash 5 or 6 on CentOS 7/Oracle Java 8
 
 The version tagged 5 runs Logstash 5.x, version 6 or latest refers to Logstash 6.x.
 
