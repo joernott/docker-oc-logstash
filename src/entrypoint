@@ -1,0 +1,11 @@
+#!/bin/bash
+if [ -n "${DEPLOY_DEFAULT_SETTINGS}" ]; then
+    cd "${LS_SETTINGS_DIR}"
+    echo "Extracting default settings:"
+    tar -xzvf /tmp/install/etc.tar.gz
+fi
+chown -R ${APP_USER}:${APP_GROUP} ${LS_SETTINGS_DIR}
+cd ${APP_HOME}
+gosu ${APP_USER}:${APP_GROUP} /usr/share/logstash/bin/logstash \
+    --path.settings "${LS_SETTINGS_DIR}" \
+    $@ 

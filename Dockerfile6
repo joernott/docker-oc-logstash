@@ -1,0 +1,27 @@
+FROM registry.ott-consult.de/oc/java8
+MAINTAINER Joern Ott <joern.ott@ott-consult.de>
+
+ENV LOGSTASH_VERSION=6.0.0 \
+    APP_USER=logstash \
+    APP_UID=2103 \
+    APP_GROUP=elk \
+    APP_GID=2100 \
+    APP_HOME=/usr/share/logstash \
+    JAVACMD=/usr/bin/java \
+    LS_HOME=/usr/share/logstash \
+    LS_SETTINGS_DIR=/etc/logstash \
+    LS_PIDFILE=/var/run/logstash.pid \
+    LS_USER=logstash \
+    LS_GROUP=elk \
+    LS_GC_LOG_FILE=/var/log/logstash/gc.log \
+    LS_OPEN_FILES=16384 \
+    LS_NICE=19 \
+    SERVICE_NAME=logstash \
+    SERVICE_DESCRIPTION=logstash \
+    DEPLOY_DEFAULT_SETTINGS=""
+
+COPY src /
+
+RUN /tmp/install/oc-logstash.sh
+
+ENTRYPOINT /entrypoint
