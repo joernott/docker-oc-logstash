@@ -1,7 +1,7 @@
 FROM registry.ott-consult.de/oc/java8
 LABEL MAINTAINER="joern.ott@ott-consult.de"
 
-ENV LOGSTASH_VERSION=5.6.15 \
+ENV LOGSTASH_VERSION=7.0.0-beta1 \
     APP_USER=logstash \
     APP_UID=2103 \
     APP_GROUP=elk \
@@ -18,10 +18,10 @@ ENV LOGSTASH_VERSION=5.6.15 \
     LS_NICE=19 \
     SERVICE_NAME=logstash \
     SERVICE_DESCRIPTION=logstash \
+    GIT_COMMIT="x" \
     DEPLOY_DEFAULT_SETTINGS="" \
     GIT_COMMIT="x" \
     IMAGE_HISTORY="x"
-
 
 COPY src /
 

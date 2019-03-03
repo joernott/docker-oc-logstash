@@ -14,3 +14,7 @@ docker push registry.ott-consult.de/oc/logstash:6
 docker tag registry.ott-consult.de/oc/logstash:6 registry.ott-consult.de/oc/logstash:latest
 docker push registry.ott-consult.de/oc/logstash:6
 docker push registry.ott-consult.de/oc/logstash:latest
+
+patch_dockerfile Dockerfile7
+docker build -f Dockerfile7 -t registry.ott-consult.de/oc/logstash:7 .
+docker push registry.ott-consult.de/oc/logstash:7
